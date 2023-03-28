@@ -1,3 +1,4 @@
+/* Skip to Main Content Button */
 .skip {
     position: absolute;
     top: -40px;
@@ -7,7 +8,61 @@
     top: 20px;
 }
 
+/* General Styling */
+
+img {
+    width: 100%;
+}
+
+body {
+    font-size: 16pt;
+}
+
+/* Header */
+header {
+    background-color: navy;
+    color: white;
+}
+
+.hamburger {
+    text-align: right;
+    padding: 20px;
+}
+
+/* Navigation: default with mobile view */
+nav {
+    /* Navigation menu initially hidden for mobile view */
+    display: none;
+    background-color: lightgrey;
+}
+
 .nav_links {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
+
+.nav_item, .dropdown_item {
+    padding: 10px 0 10px 0;
+}
+
+.nav_item:hover {
+    border: solid white 2px;
+}
+
+.nav_item a  {
+    padding-left: 10px;
+    color: navy;
+    text-decoration: none;
+}
+
+.dropdown_item a {
+    color: white;
+    text-decoration: none;
+    padding-left: 20px;
+}
+/* Dropdown menus intially hidden for mobile view */
+.dropdown_about, .dropdown_members, .dropdown_projects {
+    display: none;
+    background-color: navy;
+}
+

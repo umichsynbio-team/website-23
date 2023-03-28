@@ -4,35 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/1e15bdbff6.js" crossorigin="anonymous"></script>
+    <!-- Navigation JS -->
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="/css/html5reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <title>Michigan Synthetic Biology Team</title>
 </head>
 <body>
     <a class="skip" href="#skip">Skip to Main Content</a>
     <header>
-        <img src="" alt="" id="logo">
-        <nav>
+        <!-- <img src="" alt="" id="logo"> -->
+        <div class="hamburger" id="hamburger" onclick="showNav()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <nav id="navigation">
             <ul class="nav_links">
-                <li class="nav_item">
-                    <a href="">About</a>
-                    <ul class="dropdown">
-                        <li class="dropdown_item"><a href="about.html">Who is MSBT?</a></li>
-                        <li class="dropdown_item"><a href="about.html">Awards</a></li>
-                    </ul>
+                <li class="nav_item" onclick="aboutDrop()">
+                    <a href="#">About</a>
+                    <div class="dropdown_about">
+                        <ul class="dropdown">
+                            <li class="dropdown_item"><a href="about.html">Who is MSBT?</a></li>
+                            <li class="dropdown_item"><a href="about.html">Awards</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav_item">
-                    <a href="">Members</a>
-                    <ul class="dropdown">
-                        <li class="dropdown_item"><a href="members.html">Current Members</a></li>
-                        <li class="dropdown_item"><a href="members.html">Join MSBT</a></li>
-                    </ul>
+                    <a href="#" onclick="membersDrop()">Members</a>
+                    <div class="dropdown_members">
+                        <ul class="dropdown">
+                            <li class="dropdown_item"><a href="members.html">Current Members</a></li>
+                            <li class="dropdown_item"><a href="members.html">Join MSBT</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav_item">
-                    <a href="#">Projects</a>
-                    <ul class="dropdown">
-                        <li class="dropdown_item"><a href="project.html">Current Project</a></li>
-                        <li class="dropdown_item"><a href="project.html">Previous Projects</a></li>
-                    </ul>
+                    <a href="#" onclick="projectsDrop()">Projects</a>
+                    <div class="dropdown_projects">
+                        <ul class="dropdown">
+                            <li class="dropdown_item"><a href="project.html">Current Project</a></li>
+                            <li class="dropdown_item"><a href="project.html">Previous Projects</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav_item"><a href="donate.html">Donate</a></li>
             </ul>
