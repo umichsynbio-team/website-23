@@ -10,7 +10,7 @@
     <script src="js/index.js"></script>
     <link rel="stylesheet" href="/css/html5reset.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Michigan Synthetic Biology Team</title>
+    <title>Join the Michigan Synthetic Biology Team</title>
 </head>
 <body>
     <a class="skip" href="#home">Skip to Main Content</a>
@@ -24,30 +24,30 @@
         </div>
         <nav id="navigation">
             <ul class="nav_links">
-                <li class="nav_item dropdown" id="about">
+                <li class="nav_item" id="about" onclick="aboutDrop()">
                     <a href="#">About</a>
-                    <div class="dropdown_about dropdown_content">
-                        <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="msbt.html">Who is MSBT?</a></li>
-                            <li class="dropdown_item"><a href="awards.html">Awards</a></li>
+                    <div class="dropdown_about">
+                        <ul class="dropdown">
+                            <li class="dropdown_item"><a href="about.html">Who is MSBT?</a></li>
+                            <li class="dropdown_item"><a href="about.html">Awards</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item dropdown" id="members">
+                <li class="nav_item" id="members" onclick="membersDrop()">
                     <a href="#">Members</a>
-                    <div class="dropdown_members dropdown_content">
-                        <ul class="dropdown_links">
+                    <div class="dropdown_members">
+                        <ul class="dropdown">
                             <li class="dropdown_item"><a href="members.html">Current Members</a></li>
-                            <li class="dropdown_item"><a href="join.html">Join MSBT</a></li>
+                            <li class="dropdown_item"><a href="members.html">Join MSBT</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item dropdown" id="projects">
+                <li class="nav_item" id="projects" onclick="projectsDrop()">
                     <a href="#">Projects</a>
-                    <div class="dropdown_projects dropdown_content">
-                        <ul class="dropdown_links">
+                    <div class="dropdown_projects">
+                        <ul class="dropdown">
                             <li class="dropdown_item"><a href="project.html">Current Project</a></li>
-                            <li class="dropdown_item"><a href="pastprojects.html">Previous Projects</a></li>
+                            <li class="dropdown_item"><a href="project.html">Previous Projects</a></li>
                         </ul>
                     </div>
                 </li>
@@ -55,17 +55,6 @@
             </ul>
         </nav>
     </header>
-    <main class="home" id="home">
-        <div class="intro_blurb">
-            <h1 class="team_name">Michigan Synthetic Biology Team</h1>
-            <div class="team_intro">
-                <p>The Michigan Synthetic Biology Team is an entirely student run research and engineering design team in the biological sciences. We develop and execute our own research projects in the area of synthetic biology.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>University of Michigan Synthetic Biology Team</p>
-    </footer>
+    
 </body>
 </html>

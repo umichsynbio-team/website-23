@@ -6,34 +6,66 @@
 
 .skip:focus {
     top: 20px;
+    left: 20px;
+    background-color: white;
+    color: midnightblue;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* General Styling */
 
 img {
-    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
 body {
     font-size: 16pt;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 150%;
 }
 
 /* Header */
 header {
-    background-color: navy;
+    background-color: midnightblue;
     color: white;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-height: 100px;
+}
+
 .hamburger {
-    text-align: right;
-    padding: 20px;
+    padding: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.hamburger:hover {
+    border: solid white 2px;
 }
 
 /* Navigation: default with mobile view */
 nav {
     /* Navigation menu initially hidden for mobile view */
     display: none;
-    background-color: lightgrey;
 }
 
 .nav_links {
@@ -42,27 +74,140 @@ nav {
 }
 
 .nav_item, .dropdown_item {
-    padding: 10px 0 10px 0;
+    margin: 10px;
 }
 
-.nav_item:hover {
-    border: solid white 2px;
-}
-
-.nav_item a  {
-    padding-left: 10px;
-    color: navy;
+.nav_item a, .dropdown_item a {
+    color: white;
     text-decoration: none;
+    padding: 5px 0 5px 10px;
 }
 
 .dropdown_item a {
-    color: white;
-    text-decoration: none;
-    padding-left: 20px;
+    margin-left: 20px;
+}
+
+.nav_item:hover {
+    background-color: grey;
+    border-radius: 10px;
+}
+
+li.dropdown:hover .dropdown_content {
+    transition: 1s;
+    display: block;
+    background-color: midnightblue;
+}
+
+.dropdown_item:hover a {
+    color: midnightblue;
 }
 /* Dropdown menus intially hidden for mobile view */
 .dropdown_about, .dropdown_members, .dropdown_projects {
     display: none;
-    background-color: navy;
 }
 
+.home {
+    background-color: #4a4a4a;
+    background-image: url("../images/home_team.jpg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    min-height: 500px;
+}
+
+.team_name, .team_intro {
+    color: white;
+}
+
+div.intro_blurb {
+    text-align: center;
+    width: 80%;
+    margin: auto auto;
+}
+
+footer {
+    background-color: midnightblue;
+    color: white;
+    text-align: center;
+}
+
+/* Navigation styling for larger screens */
+@media screen and (min-width: 640px) {
+    /* Remove hamburger */
+    .hamburger {
+        display: none;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        max-height: 125px;
+    }
+    
+    nav {
+        display: block;
+        background-color: midnightblue;
+        margin: 0 30px 0 0;
+    }
+
+    /* Navigation links shown as horizontal line in header */
+    ul.nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_item:hover {
+        background-color: initial;
+    }
+
+    .nav_item {
+        padding: 10px;
+    }
+
+    li.nav_item a {
+        padding: 0;
+    }
+
+    /* Dropdown menus */
+    li.dropdown:hover .dropdown_content {
+        display: block;
+        position: fixed;
+        background-color: white;
+        margin-top: 20px;
+    }
+
+    .dropdown_item a {
+        color:midnightblue;
+        opacity: 100%;
+        margin: 0;
+    }
+
+    li.dropdown_item {
+        margin: 0;
+        padding: 10px;
+    }
+
+    li.dropdown_item:hover {
+        background-color: lightgrey;
+    }
+
+    /* Donate button in nav: white outline then solid when hovered over */
+    li.nav_item#donate {
+        border: 3px solid white;
+    }
+
+    li.nav_item#donate:hover {
+        background-color: white;
+        border-radius: 0px;
+    }
+
+    li.nav_item#donate:hover a {
+        color: midnightblue;
+        opacity: 100%;
+        font-weight: bold;
+    }
+}

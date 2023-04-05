@@ -42,3 +42,29 @@ function projectsDrop() {
         dropDown.style.display = "block";
     } // else
 }
+
+const mobileQuery = window.matchMedia("(max-width: 640px)");
+
+mobileQuery.onchange = (e) => {
+    let navList = document.getElementById("navigation");
+    navList.style.display = "none";
+}
+
+// When the screen hits the media breakpoint at the value screenSize,
+// update the navigation links to be displayed (previously display none for mobile views)
+const largerQuery = window.matchMedia("(min-width: 640px)");
+
+largerQuery.onchange = (e) => {
+    let navList = document.getElementById("navigation");
+    navList.style.display = "block";
+}
+
+// function updateNavLargerScreens(screenSize) {
+//     if (screenSize.matches) {
+//         let nav = document.getElementById("navigation");
+//         console.log("Hi")
+//     }
+// }
+// let screenSize = window.matchMedia("(min-width: 640px)")
+// updateNavLargerScreens(screenSize)
+// screenSize.addEventListener(updateNavLargerScreens)
