@@ -43,20 +43,24 @@ function projectsDrop() {
     } // else
 }
 
-const mobileQuery = window.matchMedia("(max-width: 640px)");
-
-mobileQuery.onchange = (e) => {
-    let navList = document.getElementById("navigation");
-    navList.style.display = "none";
-}
-
 // When the screen hits the media breakpoint at the value screenSize,
 // update the navigation links to be displayed (previously display none for mobile views)
 const largerQuery = window.matchMedia("(min-width: 640px)");
 
 largerQuery.onchange = (e) => {
-    let navList = document.getElementById("navigation");
-    navList.style.display = "block";
+    if (e.matches) {
+        let navList = document.getElementById("navigation");
+        navList.style.display = "block";
+    }
+}
+
+const mobileQuery = window.matchMedia("(max-width: 639px)");
+
+mobileQuery.onchange = (e) => {
+    if (e.matches) {
+        let navList = document.getElementById("navigation");
+        navList.style.display = "none";
+    }
 }
 
 // function updateNavLargerScreens(screenSize) {

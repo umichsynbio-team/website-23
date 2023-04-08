@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/1e15bdbff6.js" crossorigin="anonymous"></script>
-    <!-- Navigation JS -->
-    <script src="js/index.js"></script>
     <link rel="stylesheet" href="/css/html5reset.css">
     <link rel="stylesheet" href="/css/style.css">
     <title>Michigan Synthetic Biology Team</title>
 </head>
 <body>
-    <a class="skip" href="#home">Skip to Main Content</a>
+    <a class="skip" href="#homeMain">Skip to Main Content</a>
     <header>
-        <!-- <img src="" alt="" id="logo"> -->
         <div class="header_flex">
             <img class="logo" src="images/msbt_logo.png" alt="">
             <div class="hamburger" id="hamburger" onclick="showNav()">
@@ -24,14 +25,11 @@
         </div>
         <nav id="navigation">
             <ul class="nav_links">
+                <li class="nav_item" id="home">
+                    <a href="index.html">Home</a>
+                </li>
                 <li class="nav_item dropdown" id="about">
-                    <a href="#">About</a>
-                    <div class="dropdown_about dropdown_content">
-                        <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="msbt.html">Who is MSBT?</a></li>
-                            <li class="dropdown_item"><a href="awards.html">Awards</a></li>
-                        </ul>
-                    </div>
+                    <a href="about.html">About</a>
                 </li>
                 <li class="nav_item dropdown" id="members">
                     <a href="#">Members</a>
@@ -46,8 +44,8 @@
                     <a href="#">Projects</a>
                     <div class="dropdown_projects dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="project.html">Current Project</a></li>
-                            <li class="dropdown_item"><a href="pastprojects.html">Previous Projects</a></li>
+                            <li class="dropdown_item"><a href="current-project.html">Current Project</a></li>
+                            <li class="dropdown_item"><a href="previous-projects.html">Previous Projects</a></li>
                         </ul>
                     </div>
                 </li>
@@ -55,7 +53,7 @@
             </ul>
         </nav>
     </header>
-    <main class="home" id="home">
+    <main class="home" id="homeMain">
         <div class="intro_blurb">
             <h1 class="team_name">Michigan Synthetic Biology Team</h1>
             <div class="team_intro">
@@ -65,7 +63,32 @@
     </main>
 
     <footer>
-        <p>University of Michigan Synthetic Biology Team</p>
+        <ul class="social_media">
+            <!-- LinkedIn -->
+            <li class="social_item">
+                <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+
+            <!-- Instagram TODO -->
+            <li class="social_item">
+                <a class="social_link" href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+
+            <!-- Email -->
+            <li class="social_item">
+                <a class="social_link" href="mailto:umichsynbio-team@umich.edu">
+                    <i class="fa-sharp fa-solid fa-envelope"></i>
+                </a>
+            </li>
+        </ul>
+
+        <p>&copy; Michigan Synthetic Biology Team, 2023</p>
     </footer>
+    <!-- Navigation JS -->
+    <script src="js/index.js"></script>
 </body>
 </html>

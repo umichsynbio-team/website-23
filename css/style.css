@@ -8,7 +8,7 @@
     top: 20px;
     left: 20px;
     background-color: white;
-    color: midnightblue;
+    color: #1D334A;
     text-decoration: none;
     font-weight: bold;
 }
@@ -22,21 +22,21 @@ img {
 
 body {
     font-size: 16pt;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     line-height: 1.6;
 }
 
 h1 {
-    font-size: 150%;
+    font-size: 200%;
+    font-weight: bold;
 }
 
 /* Header */
 header {
-    background-color: midnightblue;
+    background-color: #1D334A;
     color: white;
-}
-
-header {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
     display: flex;
     flex-direction: column;
 }
@@ -88,30 +88,30 @@ nav {
 }
 
 .nav_item:hover {
-    background-color: grey;
-    border-radius: 10px;
+    opacity: 100%;
+    text-decoration: underline;
 }
 
 li.dropdown:hover .dropdown_content {
-    transition: 1s;
+    transition: 2s;
     display: block;
-    background-color: midnightblue;
+    background-color: #1D334A;
 }
 
 .dropdown_item:hover a {
-    color: midnightblue;
+    color: #1D334A;
 }
 /* Dropdown menus intially hidden for mobile view */
 .dropdown_about, .dropdown_members, .dropdown_projects {
     display: none;
 }
 
+/* Home page styling */
 .home {
-    background-color: #4a4a4a;
+    background-color: #929191;
     background-image: url("../images/home_team.jpg");
     background-size: cover;
     background-blend-mode: multiply;
-    min-height: 500px;
 }
 
 .team_name, .team_intro {
@@ -120,14 +120,38 @@ li.dropdown:hover .dropdown_content {
 
 div.intro_blurb {
     text-align: center;
-    width: 80%;
-    margin: auto auto;
+    margin: 0 auto;
+    padding: 200px 50px;
 }
 
+/* Footer Styling */
 footer {
-    background-color: midnightblue;
+    background-color: #1D334A;
     color: white;
     text-align: center;
+}
+
+footer p {
+    padding: 0 20px 20px 20px;
+}
+
+footer a {
+    color: white;
+}
+
+ul.social_media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+li.social_item {
+    padding: 10px;
+}
+
+footer a:hover {
+    opacity: 75%;
 }
 
 /* Navigation styling for larger screens */
@@ -149,7 +173,7 @@ footer {
     
     nav {
         display: block;
-        background-color: midnightblue;
+        background-color: #1D334A;
         margin: 0 30px 0 0;
     }
 
@@ -159,17 +183,22 @@ footer {
         flex-direction: row;
         justify-content: space-between;
     }
-
-    .nav_item:hover {
-        background-color: initial;
-    }
-
+    
     .nav_item {
         padding: 10px;
     }
 
     li.nav_item a {
         padding: 0;
+        opacity: 75%;
+    }
+
+    li.nav_item:hover {
+        background-color: initial;
+    }
+
+    li.nav_item:hover a {
+        opacity: 100%;
     }
 
     /* Dropdown menus */
@@ -181,7 +210,8 @@ footer {
     }
 
     .dropdown_item a {
-        color:midnightblue;
+        color:#1D334A;
+        font-weight: bold;
         opacity: 100%;
         margin: 0;
     }
@@ -206,8 +236,15 @@ footer {
     }
 
     li.nav_item#donate:hover a {
-        color: midnightblue;
+        color: #1D334A;
         opacity: 100%;
         font-weight: bold;
     }
+
+    /* Home page styling */
+    div.intro_blurb {
+        padding: 400px 200px;
+        width: 50%;
+    }
+    
 }
