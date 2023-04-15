@@ -30,6 +30,11 @@ body {
 h1 {
     font-size: 200%;
     font-weight: bold;
+    color: white;
+}
+
+a {
+    color: white;
 }
 
 /* Header */
@@ -42,24 +47,27 @@ header {
 }
 
 .header_flex {
+    /* Logo top left corner & hamburger top right */
     display: flex;
     justify-content: space-between;
 }
 
 .logo {
-    max-height: 100px;
+    max-height: 120px;
 }
 
 .hamburger {
     padding: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: auto 20px;
 }
 
 .hamburger:hover {
     border: solid white 2px;
+}
+
+li.dropdown a:focus {
+    /* Indicate which dropdown is open */
+    opacity: 100%;
 }
 
 /* Navigation: default with mobile view */
@@ -78,7 +86,7 @@ nav {
 }
 
 .nav_item a, .dropdown_item a {
-    color: white;
+    opacity: 75%;
     text-decoration: none;
     padding: 5px 0 5px 10px;
 }
@@ -87,20 +95,16 @@ nav {
     margin-left: 20px;
 }
 
-.nav_item:hover {
+.nav_item a:hover {
     opacity: 100%;
     text-decoration: underline;
 }
 
-li.dropdown:hover .dropdown_content {
-    transition: 2s;
+li.dropdown:hover .dropdown_content, li.dropdown:focus .dropdown_content {
+    /* TODO: add some sort of transition */
     display: block;
-    background-color: #1D334A;
 }
 
-.dropdown_item:hover a {
-    color: #1D334A;
-}
 /* Dropdown menus intially hidden for mobile view */
 .dropdown_about, .dropdown_members, .dropdown_projects {
     display: none;
@@ -114,14 +118,96 @@ li.dropdown:hover .dropdown_content {
     background-blend-mode: multiply;
 }
 
-.team_name, .team_intro {
+.team_intro {
     color: white;
+}
+
+.team_intro {
+    margin: 0 auto;
 }
 
 div.intro_blurb {
     text-align: center;
     margin: 0 auto;
     padding: 200px 50px;
+}
+
+/* Members Styling */
+.members_intro h1 {
+    color: #1D334A;
+    text-align: center;
+    margin: 0 auto;
+    padding: 100px 50px;
+}
+
+/* Eboard section dark blue background and white headshot cards */
+.eboard h2 {
+    color: white;
+}
+
+.eboard {
+    background-color: #1D334A;
+    border-radius: 20px;
+    margin: 25px;
+}
+
+.eboard div.headshot {
+    background-color: white;
+    color: #1D334A;
+}
+
+.eboard_social a {
+    color: #1D334A;
+}
+
+/* Current members section: white background with blue headshot cards */
+.current_members h2 {
+    color: #1D334A;
+}
+
+.current_members div.headshot {
+    background-color: #1D334A;
+    color: white;
+}
+
+/* Format styling for both members and eboard */
+.eboard h2, .current_members h2 {
+    font-size: 150%;
+    font-weight: bolder;
+    text-align: center;
+    padding: 20px 30px;
+}
+
+.eboard_flex, .current_members_flex {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.current_members_flex {
+    padding-bottom: 50px;
+}
+
+div.headshot {
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.member_name, .member_major {
+    padding-left: 10px;
+}
+
+.member_name {
+    font-weight: bold;
+}
+
+ul.member_socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+ul.member_socials li {
+    padding: 10px;
 }
 
 /* Footer Styling */
@@ -243,8 +329,29 @@ footer a:hover {
 
     /* Home page styling */
     div.intro_blurb {
-        padding: 400px 200px;
+        padding: 400px 150px;
         width: 50%;
+        font-size: 225%;
     }
     
-}
+    /* Members Styling */
+    .members_intro h1 {
+        max-width: 50%;
+    }
+
+    /* Bring headshot cards into two columns */
+    .eboard_flex, .current_members_flex {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px 30px 20px;
+    }
+
+    .eboard, .current_members {
+        margin: 0 50px;
+    }
+
+    .eboard h2, .current_members h2 {
+        font-size: 175%;
+        padding: 50px 30px;
+    }
+
+} /* Tablet view 640px */
