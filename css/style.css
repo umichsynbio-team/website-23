@@ -30,17 +30,15 @@ body {
 h1 {
     font-size: 200%;
     font-weight: bold;
-    color: white;
 }
 
-a {
+a, p, h1, h2, header, footer {
     color: white;
 }
 
 /* Header */
 header {
     background-color: #1D334A;
-    color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
     display: flex;
     flex-direction: column;
@@ -53,12 +51,11 @@ header {
 }
 
 .logo {
-    max-height: 120px;
+    max-height: 100px;
 }
 
 .hamburger {
-    padding: 10px;
-    margin: auto 20px;
+    margin: auto 20px auto 0;
 }
 
 .hamburger:hover {
@@ -112,20 +109,15 @@ li.dropdown:hover .dropdown_content, li.dropdown:focus .dropdown_content {
 
 /* Home page styling */
 .home {
-    background-color: #929191;
-    background-image: url("../images/home_team.jpg");
+    background-color: #727272;
+    background-image: url("../images/group_home.jpg");
     background-size: cover;
     background-blend-mode: multiply;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
-.team_intro {
-    color: white;
-}
-
-.team_intro {
-    margin: 0 auto;
-}
-
+/* Center team name and description on background photo */
 div.intro_blurb {
     text-align: center;
     margin: 0 auto;
@@ -151,40 +143,54 @@ div.intro_blurb {
     margin: 25px;
 }
 
+.current_members, .advisors {
+    margin: 25px;
+}
+
 .eboard div.headshot {
     background-color: white;
     color: #1D334A;
 }
 
-.eboard_social a {
+.eboard_social a,
+.eboard div.headshot p.member_major {
     color: #1D334A;
 }
 
-/* Current members section: white background with blue headshot cards */
-.current_members h2 {
+/* Italicize eboard position titles */
+.eboard_position {
+    font-style: italic;
+}
+
+/* Current members & advisors section: white background with blue headshot cards */
+.current_members h2, .advisors h2 {
     color: #1D334A;
 }
 
-.current_members div.headshot {
+.current_members div.headshot,
+.advisors div.headshot {
     background-color: #1D334A;
     color: white;
 }
 
 /* Format styling for both members and eboard */
-.eboard h2, .current_members h2 {
+.member_name {
+    font-weight: bold;
+}
+
+.eboard h2, .current_members h2,
+.advisors h2 {
     font-size: 150%;
     font-weight: bolder;
     text-align: center;
     padding: 20px 30px;
 }
 
-.eboard_flex, .current_members_flex {
+.eboard_flex,
+.current_members_flex,
+.advisors_flex {
     display: grid;
     grid-template-columns: 1fr;
-}
-
-.current_members_flex {
-    padding-bottom: 50px;
 }
 
 div.headshot {
@@ -192,14 +198,18 @@ div.headshot {
     border-radius: 20px;
 }
 
-.member_name, .member_major {
+.member_photo {
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.member_name, .member_major,
+.eboard_position {
     padding-left: 10px;
 }
 
-.member_name {
-    font-weight: bold;
-}
-
+/* Social media icons: email & LinkedIn */
 ul.member_socials {
     display: flex;
     flex-direction: row;
@@ -210,19 +220,19 @@ ul.member_socials li {
     padding: 10px;
 }
 
+.mem_social a:hover,
+.eboard_social a:hover {
+    opacity: 75%;
+}
+
 /* Footer Styling */
 footer {
     background-color: #1D334A;
-    color: white;
     text-align: center;
 }
 
 footer p {
-    padding: 0 20px 20px 20px;
-}
-
-footer a {
-    color: white;
+    padding: 0 20px 10px 20px;
 }
 
 ul.social_media {
@@ -233,15 +243,47 @@ ul.social_media {
 }
 
 li.social_item {
-    padding: 10px;
+    padding: 5px 10px;
 }
 
 footer a:hover {
     opacity: 75%;
 }
 
-/* Navigation styling for larger screens */
+/* Tablet View Breakpoint */
 @media screen and (min-width: 640px) {
+    /* Home page styling */
+    div.intro_blurb {
+        width: 75%;
+    }
+    
+    /* Members Styling */
+    .members_intro h1 {
+        max-width: 50%;
+    }
+
+    /* Bring headshot cards into two columns */
+    .eboard_flex, .current_members_flex,
+    .advisors_flex {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px 30px 20px;
+    }
+
+    .eboard, .current_members,
+    .advisors {
+        margin: 0 50px;
+    }
+
+    .eboard h2, .current_members h2,
+    .advisors h2 {
+        font-size: 175%;
+        padding: 50px 30px;
+    }
+
+} /* Tablet view 640px */
+
+/* Horizontal Navigation styling */
+@media screen and (min-width: 700px) {
     /* Remove hamburger */
     .hamburger {
         display: none;
@@ -260,7 +302,6 @@ footer a:hover {
     nav {
         display: block;
         background-color: #1D334A;
-        margin: 0 30px 0 0;
     }
 
     /* Navigation links shown as horizontal line in header */
@@ -272,6 +313,7 @@ footer a:hover {
     
     .nav_item {
         padding: 10px;
+        margin: 10px;
     }
 
     li.nav_item a {
@@ -288,7 +330,8 @@ footer a:hover {
     }
 
     /* Dropdown menus */
-    li.dropdown:hover .dropdown_content {
+    li.dropdown:hover .dropdown_content,
+    li.dropdown:focus .dropdown_content {
         display: block;
         position: fixed;
         background-color: white;
@@ -307,7 +350,7 @@ footer a:hover {
         padding: 10px;
     }
 
-    li.dropdown_item:hover {
+    li.dropdown_item:hover, li.dropdown_item:focus {
         background-color: lightgrey;
     }
 
@@ -316,42 +359,45 @@ footer a:hover {
         border: 3px solid white;
     }
 
-    li.nav_item#donate:hover {
+    li.nav_item#donate:hover,
+    li.nav_item#donate:focus {
         background-color: white;
         border-radius: 0px;
     }
 
-    li.nav_item#donate:hover a {
+    li.nav_item#donate:hover a,
+    li.nav_item#donate:focus a {
         color: #1D334A;
         opacity: 100%;
         font-weight: bold;
     }
+} /* Navigation tablet */
 
-    /* Home page styling */
+/* Desktop Styling */
+@media screen and (min-width: 1024px) {
+    /* Homepage Styling */
+    main {
+        background-position: center top;
+    }
     div.intro_blurb {
-        padding: 400px 150px;
-        width: 50%;
-        font-size: 225%;
-    }
-    
-    /* Members Styling */
-    .members_intro h1 {
-        max-width: 50%;
+        width: 60%;
+        padding: 400px 0;
     }
 
+    /* Members Page Styling */
     /* Bring headshot cards into two columns */
-    .eboard_flex, .current_members_flex {
-        grid-template-columns: 1fr 1fr;
-        padding: 0 20px 30px 20px;
+    .eboard_flex, .current_members_flex,
+    .advisors_flex {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* padding: 0 20px 30px 20px; */
     }
 
-    .eboard, .current_members {
-        margin: 0 50px;
+    /* Keep two advisor cards centered */
+    .advisor_one {
+        grid-column: 2 / span 1;
     }
 
-    .eboard h2, .current_members h2 {
-        font-size: 175%;
-        padding: 50px 30px;
+    .advisor_two {
+        grid-column: 3 / span 1;
     }
-
-} /* Tablet view 640px */
+} /* Desktop Styling */

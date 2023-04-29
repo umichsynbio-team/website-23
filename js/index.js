@@ -45,7 +45,7 @@ function projectsDrop() {
 
 // When the screen hits the media breakpoint at the value screenSize,
 // update the navigation links to be displayed (previously display none for mobile views)
-const largerQuery = window.matchMedia("(min-width: 640px)");
+const largerQuery = window.matchMedia("(min-width: 700px)");
 
 largerQuery.onchange = (e) => {
     if (e.matches) {
@@ -54,7 +54,7 @@ largerQuery.onchange = (e) => {
     }
 }
 
-const mobileQuery = window.matchMedia("(max-width: 639px)");
+const mobileQuery = window.matchMedia("(max-width: 699px)");
 
 mobileQuery.onchange = (e) => {
     if (e.matches) {
