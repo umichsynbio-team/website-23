@@ -14,6 +14,9 @@
 }
 
 /* General Styling */
+b {
+    font-weight: bolder;
+}
 
 img {
     height: auto;
@@ -113,7 +116,7 @@ li.dropdown:hover .dropdown_content, li.dropdown:focus .dropdown_content {
     background-image: url("../images/group_home.jpg");
     background-size: cover;
     background-blend-mode: multiply;
-    background-position: center center;
+    background-position: 50% 10%;
     background-attachment: fixed;
 }
 
@@ -122,6 +125,66 @@ div.intro_blurb {
     text-align: center;
     margin: 0 auto;
     padding: 200px 50px;
+}
+
+/* About Styling */
+.about_intro_flex {
+    margin: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* First flex child */
+.about_intro img {
+    margin-bottom: 20px;
+}
+
+/* Second flex child */
+.about_intro p {
+    display: block;
+    padding: 20px;
+    /* Separate from question below */
+    margin-bottom: 40px;
+    text-align: left;
+    background-color:#1D334A;
+}
+
+.question {
+    /* Slightly larger side margins to inset from intro paragraph */
+    margin: 20px 60px 40px 60px;
+
+}
+
+.question h2, .question p {
+    color: #1D334A;
+}
+
+.question a, .question a:visited {
+    color: #1D334A;
+    font-weight: bold;
+}
+
+.question h2 {
+    font-size: 200%;
+    font-weight: bolder;
+    /* Separate question and text */
+    padding-bottom: 10px;
+}
+
+/* Join MSBT Button */
+.question button {
+    display: block;
+    background-color: #1D334A;
+    padding: 20px;
+    margin: 40px auto;
+}
+
+.question a.join_button,
+.question a.join_button {
+    color: white;
+    text-decoration: none;
+    font-size: 150%;
 }
 
 /* Members Styling */
@@ -225,6 +288,98 @@ ul.member_socials li {
     opacity: 75%;
 }
 
+/* Join MSBT Styling */
+.join_intro {
+    background-image: url("/images/join/lab_work.jpg");
+    background-color: #727272;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.join_intro h1 {
+    padding: 200px 100px;
+}
+
+.app_info_flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* First flex element */
+.app_period {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: #1D334A;
+    border: solid 10px rgb(255, 255, 22);
+    text-align: center;
+    margin: 50px auto;
+}
+
+.app_period p {
+    margin: auto;
+    padding: 35px 35px;
+}
+
+/* Second flex element */
+.app_who {
+    color: #1D334A;
+    text-align: center;
+    padding: 0 50px 50px 50px;
+}
+
+/* Section about majors has blue background with white text */
+.majors {
+    background: #1D334A;
+    color: white;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.3), 0px 5px 20px 0 rgba(0, 0, 0, 0.29),
+                0px -4px 8px 0 rgba(0, 0, 0, 0.3), 0px -5px 20px 0 rgba(0, 0, 0, 0.29);
+}
+
+.majors p {
+    padding: 20px 20px 10px 20px;
+}
+
+ul.major_list {
+    padding: 0 20px 20px 40px;
+    list-style: square;
+}
+
+/* Alternating colored cards */
+.interest_flex:nth-child(even) {
+    background-color: #1D334A;
+}
+
+.interest_flex:nth-child(odd) {
+    background-color: #35682D;
+}
+
+/* White font awesome icons */
+.interest_flex i {
+    color: white;
+    font-size: 300%;
+    padding: 25px 0;
+}
+
+.interest_flex {
+    text-align: center;
+    margin: 50px 50px;
+    display: flex;
+    /* Icon with text below */
+    flex-direction: column;
+    /* Center icon */
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+}
+
+.interest_flex p {
+    padding: 0 25px 30px 25px;
+}
+
 /* Footer Styling */
 footer {
     background-color: #1D334A;
@@ -256,7 +411,22 @@ footer a:hover {
     div.intro_blurb {
         width: 75%;
     }
-    
+
+    div.intro_blurb {
+        /* Increase top/bottom padding to show background image */
+        padding: 300px 50px;
+    }
+
+    /* About Styling */
+    .about_intro img {
+        width: 75%;
+    }
+
+    .question:nth-child(even) {
+        /* Switch direction of middle question paragraph */
+        text-align: right;
+    }
+
     /* Members Styling */
     .members_intro h1 {
         max-width: 50%;
@@ -278,6 +448,60 @@ footer a:hover {
     .advisors h2 {
         font-size: 175%;
         padding: 50px 30px;
+    }
+
+    /* Join MSBT Styling */
+    .join_intro {
+        background-position: 50% 25%;
+    }
+    .join_intro h1 {
+        /* Increase top/bottom padding to show background image */
+        padding: 250px 100px;
+    }
+    .app_info_flex {
+        /* Circle next to text */
+        flex-wrap: nowrap;
+    }
+
+    .app_who {
+        width: 50%;
+        padding: 0 20px;
+        margin: auto 0;
+    }
+
+    /* Major list side-by-side with text blurb */
+    .majors {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .majors p {
+        width: 40%;
+    }
+
+    .majors ul {
+        padding: 50px 25px 50px 25px;
+    }
+
+    /* Icons side-by-side with text */
+    .interest_flex {
+        flex-direction: row;
+        text-align: right;
+    }
+
+    .interest_flex i {
+        padding: 0 70px;
+    }
+
+    .interest_flex p {
+        padding: 75px 50px;
+    }
+
+    /* Alternate flex direction */
+    .interest_flex:nth-child(odd) {
+        flex-direction: row-reverse;
+        text-align: left;
     }
 
 } /* Tablet view 640px */
@@ -376,15 +600,38 @@ footer a:hover {
 /* Desktop Styling */
 @media screen and (min-width: 1024px) {
     /* Homepage Styling */
-    main {
-        background-position: center top;
-    }
-    div.intro_blurb {
-        width: 60%;
-        padding: 400px 0;
+    .home {
+        /* Background image stay in place so that everyone can be seen in photo */
+        background-attachment: scroll;
     }
 
-    /* Members Page Styling */
+    div.intro_blurb {
+        /* Increase top/bottom padding to show everyone in background image */
+        padding: 450px 50px;
+    }
+
+    /* About Styling */
+    .about_intro_flex {
+        flex-direction: row;
+        align-items: center;
+        margin: 0 150px 40px 150px;
+    }
+
+    .about_intro img {
+        width: 40%;
+        margin: 0;
+    }
+
+    .about_intro p {
+        margin-left: 20px;
+    }
+
+    .question {
+        /* Increase side margins */
+        margin: 20px 100px 40px 100px;
+    }
+
+    /* Members Styling */
     /* Bring headshot cards into two columns */
     .eboard_flex, .current_members_flex,
     .advisors_flex {
@@ -399,5 +646,15 @@ footer a:hover {
 
     .advisor_two {
         grid-column: 3 / span 1;
+    }
+
+    /* Join MSBT Styling */
+    .join_intro h1 {
+        /* Increase padding to show background image */
+        padding: 250px 200px;
+    }
+    .interest_flex {
+        /* Increase margins on sides of cards */
+        margin: 50px 100px;
     }
 } /* Desktop Styling */
