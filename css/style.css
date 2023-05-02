@@ -14,8 +14,16 @@
 }
 
 /* General Styling */
-b {
+.bold {
     font-weight: bolder;
+}
+
+.accent_blue {
+    color: rgb(21, 168, 227);
+}
+
+.accent_green {
+    color: rgb(5, 163, 5);
 }
 
 img {
@@ -128,20 +136,19 @@ div.intro_blurb {
 }
 
 /* About Styling */
-.about_intro_flex {
+.about_intro_grid {
     margin: 0 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-/* First flex child */
-.about_intro img {
-    margin-bottom: 20px;
+img.about_one, p.about_four {
+    /* Top horizontal image and bottom text span both columns */
+    grid-column: 1 / span 2;
 }
 
-/* Second flex child */
-.about_intro p {
+p.about_four {
     display: block;
     padding: 20px;
     /* Separate from question below */
@@ -153,27 +160,43 @@ div.intro_blurb {
 .question {
     /* Slightly larger side margins to inset from intro paragraph */
     margin: 20px 60px 40px 60px;
-
 }
 
-.question h2, .question p {
+.question h2, .question p,
+.question a, .question a:visited,
+.current_project h2, .current_project h3,
+.current_project p,
+.current_project a,
+.current_project a:visited {
     color: #1D334A;
 }
 
-.question a, .question a:visited {
-    color: #1D334A;
+.question a, .question a:visited,
+.current_project h3,
+.current_project a,
+.current_project a:visited {
     font-weight: bold;
 }
 
-.question h2 {
+.current_project h2,
+.question h2,
+.awards h2 {
     font-size: 200%;
     font-weight: bolder;
+}
+
+.current_project h3 {
+    font-size: 150%;
+}
+
+.question h2 {
     /* Separate question and text */
     padding-bottom: 10px;
 }
 
 /* Join MSBT Button */
-.question button {
+.question button,
+.current_project button {
     display: block;
     background-color: #1D334A;
     padding: 20px;
@@ -181,10 +204,51 @@ div.intro_blurb {
 }
 
 .question a.join_button,
-.question a.join_button {
+.question a.join_button:visited,
+.current_project a.project_button,
+.current_project a.project_button:visited {
     color: white;
     text-decoration: none;
     font-size: 150%;
+}
+
+.question a.join_button:hover,
+.current_project a.project_button:hover {
+    text-decoration: underline;
+}
+
+.awards_flex {
+    background-color: #1D334A;
+    text-align: center;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.awards_flex i {
+    font-size: 500%;
+    padding: 50px 25px 10px 25px;
+    color: darkgoldenrod; 
+}
+
+.awards {
+    color: white;
+    padding: 0 25px 50px 25px;
+}
+
+.current_project {
+    margin: 50px;
+}
+
+.current_project p::before {
+    display: block;
+    content: '';
+    height: 1px;
+    background-color: #1D334A;
+    width: 75%;
+    margin: 10px 0;
+    box-sizing: border-box;
 }
 
 /* Members Styling */
@@ -223,6 +287,7 @@ div.intro_blurb {
 /* Italicize eboard position titles */
 .eboard_position {
     font-style: italic;
+    font-weight: bold;
 }
 
 /* Current members & advisors section: white background with blue headshot cards */
@@ -238,7 +303,7 @@ div.intro_blurb {
 
 /* Format styling for both members and eboard */
 .member_name {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .eboard h2, .current_members h2,
@@ -269,7 +334,7 @@ div.headshot {
 
 .member_name, .member_major,
 .eboard_position {
-    padding-left: 10px;
+    padding: 0 10px;
 }
 
 /* Social media icons: email & LinkedIn */
@@ -418,13 +483,42 @@ footer a:hover {
     }
 
     /* About Styling */
-    .about_intro img {
-        width: 75%;
+    .about_intro_grid {
+        margin: 0 100px;
     }
-
     .question:nth-child(even) {
         /* Switch direction of middle question paragraph */
         text-align: right;
+    }
+
+    .awards_flex {
+        /* Bring awards icon to right */
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 100px;
+    }
+
+    .awards, .awards_flex i {
+        padding: 50px 0;
+    }
+
+    .awards_flex i {
+        font-size: 1000%;
+    }
+
+    .current_project {
+        text-align: center;
+    }
+    
+    .current_project p::before {
+        width: 50%;
+        margin: 10px auto;
+    }
+
+    .current_project p {
+        width: 75%;
+        margin: 0 auto;
     }
 
     /* Members Styling */
@@ -611,19 +705,30 @@ footer a:hover {
     }
 
     /* About Styling */
-    .about_intro_flex {
-        flex-direction: row;
-        align-items: center;
-        margin: 0 150px 40px 150px;
+    .about_intro_grid {
+        margin: 0 150px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
-    .about_intro img {
-        width: 40%;
-        margin: 0;
+    img.about_one {
+        grid-column: 1 / span 2;
+        align-self: end;
     }
 
-    .about_intro p {
-        margin-left: 20px;
+    img.about_two {
+        grid-column: 1 / span 1;
+        align-self: start;
+    }
+
+    img.about_three {
+        grid-column: 2 / span 1;
+        align-self: start;
+    }
+
+    p.about_four {
+        grid-column: 3 / -1;
+        grid-row: 1 / span 2;
+        align-self: center;
     }
 
     .question {
@@ -656,5 +761,22 @@ footer a:hover {
     .interest_flex {
         /* Increase margins on sides of cards */
         margin: 50px 100px;
+    }
+
+    .app_period {
+        /* Increase size of circle */
+        width: 350px;
+        height: 350px;
+        border-width: 20px;
+        margin: 75px auto;
+    }
+
+    .app_period p {
+        /* Center text inside cirlce */
+        padding: 115px 55px;
+    }
+
+    .majors p {
+        padding: 0 75px 0 50px;
     }
 } /* Desktop Styling */
