@@ -19,37 +19,37 @@
     <header>
         <div class="header_flex">
             <img class="logo" src="images/msbt_logo.png" alt="">
-            <div class="hamburger" id="hamburger" onclick="showNav()">
+            <div class="hamburger" id="hamburger" onclick="showNav()" onkeypress="showNav()" tabindex="0">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         <nav id="navigation">
             <ul class="nav_links">
                 <li class="nav_item" id="home">
-                    <a href="index.html">Home</a>
+                    <a class="underline_nav" href="index.html">Home</a>
                 </li>
                 <li class="nav_item dropdown" id="about">
-                    <a href="about.html">About</a>
+                    <a class="underline_nav" href="about.html">About</a>
                 </li>
-                <li class="nav_item dropdown" id="members">
-                    <a href="#">Members</a>
-                    <div class="dropdown_members dropdown_content">
+                <li class="nav_item dropdown" id="members" onclick="membersDrop()">
+                    <a class="underline_nav" href="#">Members<i class="fa-solid fa-angle-down"></i></a>
+                    <div id="memberDrop" class="dropdown_members dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="members.html">Current Members</a></li>
-                            <li class="dropdown_item"><a href="join.html">Join MSBT</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="members.html">Current Members</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="join.html">Join MSBT</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item dropdown" id="projects">
-                    <a href="#">Projects</a>
-                    <div class="dropdown_projects dropdown_content">
+                <li class="nav_item dropdown" id="projects" onclick="projectsDrop()">
+                    <a class="underline_nav" href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
+                    <div id="projectDrop" class="dropdown_projects dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="current-project.html">Current Project</a></li>
-                            <li class="dropdown_item"><a href="previous-projects.html">Previous Projects</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="current-project.html">Current Project</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="previous-projects.html">Previous Projects</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item" id="donate"><a href="donate.html">Donate</a></li>
+                <li class="nav_item" id="donate"><a class="underline_nav" href="donate.html">Donate</a></li>
             </ul>
         </nav>
     </header>
@@ -70,7 +70,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="eboard_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/sophia-tesic-b03a5b271">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -93,7 +93,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="eboard_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/emcwallace">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -116,7 +116,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="eboard_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/adam-tisch-0849971a6">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -139,7 +139,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="eboard_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/sriram-garapati-3a2930203">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -162,7 +162,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="eboard_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/kimi-lillios-b70ab11a6?original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -185,7 +185,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="eboard_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/sabinemeurs">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -208,7 +208,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="eboard_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/zoe-jackson-ab3902219?original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -323,7 +323,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/erika-hochstein-39aab8229">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -345,7 +345,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/grace-lombardo-23aaa7255?original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -367,7 +367,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/haniya-farooq-16b206251">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -389,7 +389,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/jack-guo-a04941211">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -411,7 +411,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/jack-handzel-b28b3a23a?original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -433,7 +433,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/jaclyn-carrannanto-4a9288221">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -477,7 +477,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/maurice-barroso-695a82229">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -499,7 +499,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/mihika-rayan-5a7a21201?trk=public_profile_browsemap&original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -521,7 +521,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/nikita-lebedz?trk=org-employees">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -565,7 +565,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/rachel-dow-02875820b?original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -631,7 +631,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/sreya-gogineni-09b6961b0?original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -653,7 +653,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/surya-sanjay-2034271a7">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -697,7 +697,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/xuan-an-le-b64a7a203?original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -725,7 +725,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/kareem-aboulhosn-009496123">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>
@@ -747,7 +747,7 @@
                     <ul class="member_socials">
                         <!-- LinkedIn -->
                         <li class="mem_social">
-                            <a class="social_link" href="https://www.linkedin.com/company/michigan-synthetic-biology-team/">
+                            <a class="social_link" href="https://www.linkedin.com/in/george-rabadi-66b669208?original_referer=https%3A%2F%2Fwww.google.com%2F">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </li>

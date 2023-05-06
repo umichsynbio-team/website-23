@@ -19,42 +19,79 @@
     <header>
         <div class="header_flex">
             <img class="logo" src="images/msbt_logo.png" alt="">
-            <div class="hamburger" id="hamburger" onclick="showNav()">
+            <div class="hamburger" id="hamburger" onclick="showNav()" onkeypress="showNav()" tabindex="0">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         <nav id="navigation">
             <ul class="nav_links">
                 <li class="nav_item" id="home">
-                    <a href="index.html">Home</a>
+                    <a class="underline_nav" href="index.html">Home</a>
                 </li>
                 <li class="nav_item dropdown" id="about">
-                    <a href="about.html">About</a>
+                    <a class="underline_nav" href="about.html">About</a>
                 </li>
-                <li class="nav_item dropdown" id="members">
-                    <a href="#">Members</a>
+                <li class="nav_item dropdown" id="members" onclick="membersDrop()">
+                    <a class="underline_nav" href="#">Members<i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown_members dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="members.html">Current Members</a></li>
-                            <li class="dropdown_item"><a href="join.html">Join MSBT</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="members.html">Current Members</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="join.html">Join MSBT</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item dropdown" id="projects">
-                    <a href="#">Projects</a>
+                <li class="nav_item dropdown" id="projects" onclick="projectsDrop()">
+                    <a class="underline_nav" href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown_projects dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="current-project.html">Current Project</a></li>
-                            <li class="dropdown_item"><a href="previous-projects.html">Previous Projects</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="current-project.html">Current Project</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="previous-projects.html">Previous Projects</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item" id="donate"><a href="donate.html">Donate</a></li>
+                <li class="nav_item" id="donate"><a class="underline_nav" href="donate.html">Donate</a></li>
             </ul>
         </nav>
     </header>
     <main class="" id="donateMain">
-        
+        <div class="donate_intro">
+            <h1>Donate to MSBT</h1>
+            <p>As an undergraduate research organization, our members work hard to acquire independent funding and we rely on the support from people like you to make the unique research experience we offer possible. Donations from this campaign will directly fund this upcoming year's project, benefiting the team of 30 undergraduate students seeking to lead their own research project during the 2023 iGEM season.</p>
+        </div>
+
+        <div class="giving_hand accent_green">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+
+        <div class="donation_use">
+            <h2>What Your Gift Supports</h2>
+            <p>All donations will go towards:</p>
+            <ul class="donation_use_list">
+                <li class="donation_use_item">Registering for the iGEM competition</li>
+                <li class="donation_use_item">Purchasing the resources necessary to run our experiments</li>
+                <li class="donation_use_item">Hosting outreach events in our Ann Arbor community</li>
+                <li class="donation_use_item">Travelling to Paris to present our findings at the iGEM jamboree</li>
+            </ul>
+            <p>Donations of any size have the ability to empower us to achieve our research goals this year. Please consider donating to our team!</p>
+        </div>
+
+        <div class="dono_forms">
+            <div class="friend_gifts">
+                <h2>Friends & Family</h2>
+                <p>TODO</p>
+                <button class="friend_form">
+                    <a href="https://docs.google.com/forms/d/1wF6D9Beo2Xu938YeWUqNNrfceGRFta_A_25ejVyjuxE/edit">Donor Form</a>
+                </button>
+            </div>
+    
+            <div class="company_gifts">
+                <h2>Interested Companies</h2>
+                <p>TODO</p>
+                <button class="company_form">
+                    <a href="">Company Donor Form</a>
+                </button>
+            </div>
+        </div>
     </main>
     <!-- Footer -->
     <footer>

@@ -19,37 +19,37 @@
     <header>
         <div class="header_flex">
             <img class="logo" src="images/msbt_logo.png" alt="">
-            <div class="hamburger" id="hamburger" onclick="showNav()">
+            <div class="hamburger" id="hamburger" onclick="showNav()" onkeypress="showNav()" tabindex="0">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         <nav id="navigation">
             <ul class="nav_links">
                 <li class="nav_item" id="home">
-                    <a href="index.html">Home</a>
+                    <a class="underline_nav" href="index.html">Home</a>
                 </li>
                 <li class="nav_item dropdown" id="about">
-                    <a href="about.html">About</a>
+                    <a class="underline_nav" href="about.html">About</a>
                 </li>
-                <li class="nav_item dropdown" id="members">
-                    <a href="#">Members</a>
+                <li class="nav_item dropdown" id="members" onclick="membersDrop()">
+                    <a class="underline_nav" href="#">Members<i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown_members dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="members.html">Current Members</a></li>
-                            <li class="dropdown_item"><a href="join.html">Join MSBT</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="members.html">Current Members</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="join.html">Join MSBT</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item dropdown" id="projects">
-                    <a href="#">Projects</a>
+                <li class="nav_item dropdown" id="projects" onclick="projectsDrop()">
+                    <a class="underline_nav" href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown_projects dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="current-project.html">Current Project</a></li>
-                            <li class="dropdown_item"><a href="previous-projects.html">Previous Projects</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="current-project.html">Current Project</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="previous-projects.html">Previous Projects</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item" id="donate"><a href="donate.html">Donate</a></li>
+                <li class="nav_item" id="donate"><a class="underline_nav" href="donate.html">Donate</a></li>
             </ul>
         </nav>
     </header>
@@ -58,11 +58,24 @@
             <h1>Why join MSBT?</h1>
         </div>
 
-        <div class="app_info app_info_flex">
-            <div class="app_period circle">
-                <p>Our <span class="bold">next application period</span> will start in the <span class="bold">middle of January</span> 2024</p>
+        <div class="logistics">
+            <div class="when">
+                <h2>When</h2>
+                <p>Our <span class="bold accent_blue">next application period</span> will start in <span class="bold accent_blue">January 2024</span></p>
             </div>
-            <p class="app_who"><span class="bold">Any undergraduate student</span> with an interest in synthetic biology with biological engineering is welcome to join! Absolutely <span class="bold">no previous experience is required</span>.</p>
+
+            <div class="who">
+                <h2>Who</h2>
+                <p>Any undergraduate student with an interest in synthetic biology and biological engineering is welcome to join! Absolutely <span class="bold accent_blue">no previous experience is required</span>.</p>
+            </div>
+
+            <div class="other_roles">
+                <p>In addition, we always have places for students interested in mathematical modeling, business, programming, web design, and animation. We also have graduate students and faculty advisors from multiple colleges and departments on campus.</p>
+            </div>
+
+            <div class="meetings">
+                <p>MSBT holds weekly content and working meetings from February to the end of the winter semester. Continuing through spring, summer, and the following fall semester, we transition to working on the year’s project. The iGEM competition takes place in late October!</p>
+            </div>
         </div>
 
         <div class="majors">
@@ -84,6 +97,18 @@
         </div>
         
         <!-- Interests -->
+        <div class="interests_intro">
+            <h2>Joining MSBT</h2>
+            <p>There are boundless opportunities for our team members to learn both hard and soft skills through experience with:</p>
+            <ul class="opportunities_list">
+                <li class="opportunity_item">working in the lab</li>
+                <li class="opportunity_item">fundraising and managing finances</li>
+                <li class="opportunity_item">community outreach</li>
+                <li class="opportunity_item">helping with organization and leadership</li>
+                <li class="opportunity_item">studying and communicating synthetic biology research</li>
+            </ul>
+            <p>Our team is a platform for budding scientists, communicators, and fascinated biologists to be introduced into the field and to the academic research process!</p>
+        </div>
         <div class="interests">
             <!-- Interest 01: Synthetic Biology -->
             <div class="interest_flex">

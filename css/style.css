@@ -19,7 +19,7 @@
 }
 
 .accent_blue {
-    color: rgb(21, 168, 227);
+    color: rgb(7, 112, 154);
 }
 
 .accent_green {
@@ -43,14 +43,25 @@ h1 {
     font-weight: bold;
 }
 
-a, p, h1, h2, header, footer {
+h2 {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+button a {
     color: white;
+}
+
+a, p, h1, h2, header, footer {
+    color: #1D334A;
 }
 
 /* Header */
 header {
     background-color: #1D334A;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+    /* Keeps top logo & hamburger (first child) and list of 
+    nav links (second child) in column */
     display: flex;
     flex-direction: column;
 }
@@ -66,16 +77,14 @@ header {
 }
 
 .hamburger {
+    color: white;
+    padding: 10px;
     margin: auto 20px auto 0;
 }
 
-.hamburger:hover {
+.hamburger:hover, .hamburger:focus {
     border: solid white 2px;
-}
-
-li.dropdown a:focus {
-    /* Indicate which dropdown is open */
-    opacity: 100%;
+    border-radius: 5px;
 }
 
 /* Navigation: default with mobile view */
@@ -85,8 +94,13 @@ nav {
 }
 
 .nav_links {
+    /* Links in column for dropdown hamburger menu */
     display: flex;
     flex-direction: column;
+}
+
+.nav_links li a {
+    color: white;
 }
 
 .nav_item, .dropdown_item {
@@ -96,25 +110,65 @@ nav {
 .nav_item a, .dropdown_item a {
     opacity: 75%;
     text-decoration: none;
-    padding: 5px 0 5px 10px;
+    margin: 5px 0 5px 10px;
 }
 
 .dropdown_item a {
+    /* Inset further from parent link */
     margin-left: 20px;
 }
 
-.nav_item a:hover {
+li.dropdown a:focus {
+    /* Indicate which dropdown is open */
     opacity: 100%;
-    text-decoration: underline;
 }
 
-li.dropdown:hover .dropdown_content, li.dropdown:focus .dropdown_content {
-    /* TODO: add some sort of transition */
+/* Arrow for nav links with dropdown menus */
+i.fa-angle-down {
+    color: white;
+    padding-left: 5px;
+    /* Center side-by-side with corresponding link */
+    position: relative;
+    top: 2px;
+}
+
+/* Navigation link CSS animation */
+.underline_nav {
+    position: relative;
+    text-decoration: none;
+}
+
+.underline_nav::before {
+    content: '';
+    position: absolute;
     display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    /* Hide border/line */
+    transform: scaleX(0);
+    /* Animate the line from the left */
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+}
+
+.underline_nav:hover::before,
+.underline_nav:focus::before {
+    /* Make line visible */
+    transform: scaleX(1);
+}
+
+.underline_nav:hover,
+.underline_nav:focus {
+    /* Full opacity (from 75%) when hovered over */
+    opacity: 100%;
 }
 
 /* Dropdown menus intially hidden for mobile view */
-.dropdown_about, .dropdown_members, .dropdown_projects {
+.dropdown_about, .dropdown_members,
+.dropdown_projects {
     display: none;
 }
 
@@ -133,6 +187,11 @@ div.intro_blurb {
     text-align: center;
     margin: 0 auto;
     padding: 200px 50px;
+}
+
+/* White text on background photo */
+.team_name, .team_intro p {
+    color: white;
 }
 
 /* About Styling */
@@ -155,20 +214,12 @@ p.about_four {
     margin-bottom: 40px;
     text-align: left;
     background-color:#1D334A;
+    color: white;
 }
 
 .question {
     /* Slightly larger side margins to inset from intro paragraph */
     margin: 20px 60px 40px 60px;
-}
-
-.question h2, .question p,
-.question a, .question a:visited,
-.current_project h2, .current_project h3,
-.current_project p,
-.current_project a,
-.current_project a:visited {
-    color: #1D334A;
 }
 
 .question a, .question a:visited,
@@ -237,10 +288,15 @@ p.about_four {
     padding: 0 25px 50px 25px;
 }
 
+.awards h2 {
+    color: white;
+}
+
 .current_project {
     margin: 50px;
 }
 
+/* Separation line */
 .current_project p::before {
     display: block;
     content: '';
@@ -253,7 +309,6 @@ p.about_four {
 
 /* Members Styling */
 .members_intro h1 {
-    color: #1D334A;
     text-align: center;
     margin: 0 auto;
     padding: 100px 50px;
@@ -276,12 +331,6 @@ p.about_four {
 
 .eboard div.headshot {
     background-color: white;
-    color: #1D334A;
-}
-
-.eboard_social a,
-.eboard div.headshot p.member_major {
-    color: #1D334A;
 }
 
 /* Italicize eboard position titles */
@@ -291,13 +340,16 @@ p.about_four {
 }
 
 /* Current members & advisors section: white background with blue headshot cards */
-.current_members h2, .advisors h2 {
-    color: #1D334A;
-}
-
 .current_members div.headshot,
 .advisors div.headshot {
     background-color: #1D334A;
+    color: white;
+}
+
+.current_members .member_major,
+.advisors .member_major,
+.current_members .social_link,
+.advisors .social_link {
     color: white;
 }
 
@@ -308,7 +360,6 @@ p.about_four {
 
 .eboard h2, .current_members h2,
 .advisors h2 {
-    font-size: 150%;
     font-weight: bolder;
     text-align: center;
     padding: 20px 30px;
@@ -364,36 +415,15 @@ ul.member_socials li {
 }
 
 .join_intro h1 {
+    color: white;
     padding: 200px 100px;
 }
 
-.app_info_flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-/* First flex element */
-.app_period {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    background-color: #1D334A;
-    border: solid 10px rgb(255, 255, 22);
-    text-align: center;
-    margin: 50px auto;
-}
-
-.app_period p {
-    margin: auto;
-    padding: 35px 35px;
-}
-
-/* Second flex element */
-.app_who {
-    color: #1D334A;
-    text-align: center;
-    padding: 0 50px 50px 50px;
+.logistics {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 50px;
+    gap: 20px;
 }
 
 /* Section about majors has blue background with white text */
@@ -402,15 +432,33 @@ ul.member_socials li {
     color: white;
     box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.3), 0px 5px 20px 0 rgba(0, 0, 0, 0.29),
                 0px -4px 8px 0 rgba(0, 0, 0, 0.3), 0px -5px 20px 0 rgba(0, 0, 0, 0.29);
+    margin: 50px;
 }
 
 .majors p {
-    padding: 20px 20px 10px 20px;
+    color: white;
+    padding: 25px 25px 10px 25px;
+    font-size: 120%;
 }
 
 ul.major_list {
-    padding: 0 20px 20px 40px;
+    padding: 5px 25px 25px 50px;
     list-style: square;
+}
+
+.interests_intro h2 {
+    font-weight: bolder;
+    padding-bottom: 5px;
+}
+
+.interests_intro {
+    margin: 50px;
+}
+
+.opportunities_list {
+    /* Inset list from surrounding paragraphs */
+    list-style: circle;
+    padding: 10px 0 10px 40px;
 }
 
 /* Alternating colored cards */
@@ -426,7 +474,11 @@ ul.major_list {
 .interest_flex i {
     color: white;
     font-size: 300%;
-    padding: 25px 0;
+    padding: 50px 0;
+}
+
+.interest_flex p {
+    color: white;
 }
 
 .interest_flex {
@@ -445,6 +497,166 @@ ul.major_list {
     padding: 0 25px 30px 25px;
 }
 
+/* Current Project Styling */
+#currProjMain h1 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+.our_plan {
+    background-image: url("/images/current/plan_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #727272;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+}
+
+#currProjMain.our_plan h2 {
+    color: white;
+}
+
+/* Previous Projects Styling */
+.prev_projects_intro h1, .prev_projects_intro p,
+li.project_item a {
+    text-decoration: none;
+}
+
+.prev_projects_intro {
+    word-wrap: break-word;
+    margin: 25px;
+}
+
+.prev_projects_intro h1 {
+    padding-bottom: 10px;
+}
+
+li.project_item a {
+    font-size: 115%;
+}
+
+.project_info {
+    padding: 10px;
+}
+
+/* Add corresponding year to each project link as the list bullet point */
+.project_year {
+    background-color: #1D334A;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.project_year h2 {
+    color: white;
+}
+
+.project_item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.projects_list {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+    margin: 50px 25px;
+}
+
+/* CSS animation for project links */
+.underline_link {
+    text-decoration: none;
+    /* Use background image because can span multiple lines */
+    background-image: linear-gradient(#0003a9, #038fc2);
+    /* 0% for horizontal position and 100% for vertical */
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    /* width 0% (hidden) and height 2px */
+    background-size: 0% 2px;
+    /* animation changes width (background-size) */
+    transition: background-size 0.3s ease;
+}
+
+.underline_link:hover, .underline_link:focus {
+    /* Full width when hovered or in focus */
+    background-size: 100% 2px;
+}
+
+/* Donate Styling */
+.donate_intro {
+    margin: 100px 25px 0 25px;
+}
+
+/* Line after header */
+.donate_intro h1::after {
+    content: '';
+    display: block;
+    background-color: #1D334A;
+    height: 1px;
+    width: 90%;
+}
+
+.donate_intro p {
+    /* Separate from line after header */
+    padding-top: 8px;
+}
+
+.giving_hand {
+    padding: 10px;
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    font-size: 400%;
+}
+
+.donation_use h2, .friend_gifts h2,
+.company_gifts h2 {
+    /* Separate headings from paragraphs */
+    padding-bottom: 10px;
+}
+
+.donation_use, .dono_forms {
+    margin: 25px;
+}
+
+.donation_use_list {
+    padding: 10px 25px 10px 100px;
+    list-style: circle;
+}
+
+.dono_forms {
+    display: grid;
+    row-gap: 25px;
+    grid-template-columns: 1fr;
+}
+
+/* Donation Form Buttons */
+.friend_form, .company_form {
+    background-color: #1D334A;
+    /* Center button */
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.friend_form a, .company_form a {
+    text-decoration: none;
+    font-size: 125%;
+}
+
+.friend_form a:hover, .company_form a:hover {
+    text-decoration: underline;
+}
+
+.company_gifts {
+    /* Separate from footer */
+    margin-bottom: 50px;
+}
+
 /* Footer Styling */
 footer {
     background-color: #1D334A;
@@ -452,7 +664,8 @@ footer {
 }
 
 footer p {
-    padding: 0 20px 10px 20px;
+    padding: 5px 20px 25px 20px;
+    color: white;
 }
 
 ul.social_media {
@@ -463,7 +676,12 @@ ul.social_media {
 }
 
 li.social_item {
-    padding: 5px 10px;
+    padding: 20px;
+}
+
+footer a.social_link {
+    color: white;
+    font-size: 125%;
 }
 
 footer a:hover {
@@ -500,7 +718,7 @@ footer a:hover {
     }
 
     .awards, .awards_flex i {
-        padding: 50px 0;
+        padding: 50px 25px;
     }
 
     .awards_flex i {
@@ -548,19 +766,18 @@ footer a:hover {
     .join_intro {
         background-position: 50% 25%;
     }
+
     .join_intro h1 {
         /* Increase top/bottom padding to show background image */
         padding: 250px 100px;
     }
-    .app_info_flex {
-        /* Circle next to text */
-        flex-wrap: nowrap;
-    }
 
-    .app_who {
-        width: 50%;
-        padding: 0 20px;
-        margin: auto 0;
+    .logistics {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .other_roles, .meetings {
+        grid-column: 1 / -1;
     }
 
     /* Major list side-by-side with text blurb */
@@ -578,6 +795,11 @@ footer a:hover {
         padding: 50px 25px 50px 25px;
     }
 
+    .interests_intro, .logistics {
+        /* Increase side margins */
+        margin: 50px 100px;
+    }
+
     /* Icons side-by-side with text */
     .interest_flex {
         flex-direction: row;
@@ -586,6 +808,8 @@ footer a:hover {
 
     .interest_flex i {
         padding: 0 70px;
+        /* Increase icon size */
+        font-size: 500%;
     }
 
     .interest_flex p {
@@ -598,16 +822,51 @@ footer a:hover {
         text-align: left;
     }
 
+    /* Previous Projects */
+    .prev_projects_intro {
+        /* Increase side margins */
+        margin: 50px 100px 25px 100px;
+    }
+
+    .projects_list {
+        margin: 50px 100px;
+    }
+
+    .project_item {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 25px;
+    }
+
+    /* Donate Styling */
+    .donate_intro {
+        margin: 100px 75px 0 75px;
+    }
+
+    .donation_use, .dono_forms {
+        margin: 25px 75px;
+    }
+
+    .dono_forms {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .friend_form, .company_form {
+        /* Right-align */
+        margin: 10px 10px 0 0;
+    }
 } /* Tablet view 640px */
 
 /* Horizontal Navigation styling */
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 950px) {
     /* Remove hamburger */
     .hamburger {
         display: none;
     }
 
     header {
+        /* Bring navigation links to be side-by-side with logo in header */
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -619,10 +878,9 @@ footer a:hover {
     
     nav {
         display: block;
-        background-color: #1D334A;
     }
 
-    /* Navigation links shown as horizontal line in header */
+    /* Bring navigation links into horizontal line in header */
     ul.nav_links {
         display: flex;
         flex-direction: row;
@@ -635,20 +893,17 @@ footer a:hover {
     }
 
     li.nav_item a {
+        /* Remove previous margin and padding */
+        margin: 0;
         padding: 0;
-        opacity: 75%;
     }
 
-    li.nav_item:hover {
-        background-color: initial;
-    }
-
-    li.nav_item:hover a {
-        opacity: 100%;
+    ul.dropdown_links {
+        /* White dropdown boxes */
+        background-color: white;
     }
 
     /* Dropdown menus */
-    li.dropdown:hover .dropdown_content,
     li.dropdown:focus .dropdown_content {
         display: block;
         position: fixed;
@@ -656,7 +911,7 @@ footer a:hover {
         margin-top: 20px;
     }
 
-    .dropdown_item a {
+    li.dropdown_item a {
         color:#1D334A;
         font-weight: bold;
         opacity: 100%;
@@ -668,8 +923,14 @@ footer a:hover {
         padding: 10px;
     }
 
-    li.dropdown_item:hover, li.dropdown_item:focus {
+    li.dropdown_item:hover,
+    li.dropdown_item:focus {
         background-color: lightgrey;
+    }
+
+    ul.dropdown_links .underline_nav::before {
+        /* Animated line underneath link now navy for dropdown */
+        background-color: #1D334A;
     }
 
     /* Donate button in nav: white outline then solid when hovered over */
@@ -706,7 +967,7 @@ footer a:hover {
 
     /* About Styling */
     .about_intro_grid {
-        margin: 0 150px;
+        margin: 0 150px 50px 150px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
@@ -758,25 +1019,45 @@ footer a:hover {
         /* Increase padding to show background image */
         padding: 250px 200px;
     }
+
+    .interests_intro, .logistics {
+        /* Increase side margins */
+        margin: 50px 200px;
+    }
+
     .interest_flex {
         /* Increase margins on sides of cards */
-        margin: 50px 100px;
-    }
-
-    .app_period {
-        /* Increase size of circle */
-        width: 350px;
-        height: 350px;
-        border-width: 20px;
-        margin: 75px auto;
-    }
-
-    .app_period p {
-        /* Center text inside cirlce */
-        padding: 115px 55px;
+        margin: 50px 150px;
     }
 
     .majors p {
         padding: 0 75px 0 50px;
+    }
+
+    /* Previous Projects */
+    .projects_list {
+        /* Projects in two columns */
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        /* Increase side margins */
+        margin: 50px 150px;
+    }
+
+    /* Donate Styling */
+    .donate_intro {
+        margin: 100px 100px 0 100px;
+        width: 75%;
+    }
+
+    .donate_intro h1::after {
+        width: 75%;
+    }
+
+    .giving_hand {
+        font-size: 550%;
+    }
+
+    .donation_use, .dono_forms {
+        margin: 25px 100px;
     }
 } /* Desktop Styling */

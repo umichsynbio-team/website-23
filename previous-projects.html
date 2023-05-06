@@ -19,46 +19,175 @@
     <header>
         <div class="header_flex">
             <img class="logo" src="images/msbt_logo.png" alt="">
-            <div class="hamburger" id="hamburger" onclick="showNav()">
+            <div class="hamburger" id="hamburger" onclick="showNav()" onkeypress="showNav()" tabindex="0">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
         <nav id="navigation">
             <ul class="nav_links">
                 <li class="nav_item" id="home">
-                    <a href="index.html">Home</a>
+                    <a class="underline_nav" href="index.html">Home</a>
                 </li>
                 <li class="nav_item dropdown" id="about">
-                    <a href="about.html">About</a>
+                    <a class="underline_nav" href="about.html">About</a>
                 </li>
-                <li class="nav_item dropdown" id="members">
-                    <a href="#">Members</a>
+                <li class="nav_item dropdown" id="members" onclick="membersDrop()">
+                    <a class="underline_nav" href="#">Members<i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown_members dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="members.html">Current Members</a></li>
-                            <li class="dropdown_item"><a href="join.html">Join MSBT</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="members.html">Current Members</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="join.html">Join MSBT</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item dropdown" id="projects">
-                    <a href="#">Projects</a>
+                <li class="nav_item dropdown" id="projects" onclick="projectsDrop()">
+                    <a class="underline_nav" href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
                     <div class="dropdown_projects dropdown_content">
                         <ul class="dropdown_links">
-                            <li class="dropdown_item"><a href="current-project.html">Current Project</a></li>
-                            <li class="dropdown_item"><a href="previous-projects.html">Previous Projects</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="current-project.html">Current Project</a></li>
+                            <li class="dropdown_item"><a class="underline_nav" href="previous-projects.html">Previous Projects</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item" id="donate"><a href="donate.html">Donate</a></li>
+                <li class="nav_item" id="donate"><a class="underline_nav" href="donate.html">Donate</a></li>
             </ul>
         </nav>
     </header>
     <main class="" id="prevProjMain">
-        <h1>Project Archive</h1>
-        <p>Every year, the Michigan Synthetic Biology Team participates in the iGEM Competition. Check out some of our previous projects over the years below!</p>
+        <div class="prev_projects_intro">
+            <h1>Project Archive</h1>
+            <p>Every year, the Michigan Synthetic Biology Team travels to Paris to participate in the International Genetically Engineered Machine (iGEM) competition. Exemplary teams are awarded with gold, silver, or bronze medlas based on the competition deliverables established by the iGEM cocmmittee each year. As a part of each submission to the iGEM competition, each team must create a Wiki Page detailing their project. Check out some of MSBT's previous projects and Wiki Pages below!</p>
+        </div>
 
         <ul class="projects_list">
-            <li></li>
+            <li class="project_item year_22">
+                <div class="project_year">
+                    <h2>2022</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2022.igem.wiki/michigan/">Amplify: Encapsulin-Facilitated Antimicrobial Peptide Biosynthesis</a>
+                </div>
+            </li>
+            <li class="project_item year_21">
+                <div class="project_year">
+                    <h2>2021</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2021.igem.org/Team:Michigan">Investigating the Versatility of Encapsulin Protein Nanocompartments for Drug Delivery</a>
+                </div>
+            </li>
+            <li class="project_item year_19">
+                <div class="project_year">
+                    <h2>2019</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2019.igem.org/Team:Michigan/Team">Got Milk? Reducing Food Waste with AHL Detection</a>
+                </div>
+            </li>
+            <li class="project_item year_18">
+                <div class="project_year">
+                    <h2>2018</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2018.igem.org/Team:Michigan">CRISPR Testing Model: Competitive Binding</a>
+                </div>
+            </li>
+            <li class="project_item year_17">
+                <div class="project_year">
+                    <h2>2017</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2017.igem.org/Team:Michigan">Thermolyze: A Temperature Controlled Kill-Switch for Containment of Pathogenic Bacteria in Research Labs</a>
+                </div>
+            </li>
+            <li class="project_item year_16">
+                <div class="project_year">
+                    <h2>2016</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2016.igem.org/Team:Michigan">Aptamer-based Protein Detection</a>
+                </div>
+            </li>
+            <li class="project_item year_15">
+                <div class="project_year">
+                    <h2>2015</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2015.igem.org/Team:Michigan">Aptapaper: Detecting Any Protein on Paper Test Strips</a>
+                </div>
+            </li>
+            <li class="project_item year_14">
+                <div class="project_year">
+                    <h2>2014</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2014.igem.org/Team:Michigan">Antibody scFv Secretion in E. coli</a>
+                </div>
+            </li>
+            <li class="project_item year_13">
+                <div class="project_year">
+                    <h2>2013</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2013.igem.org/Team:Michigan">A Completely Unidirectional Biological Transistor Utilizing an Engineered Fim Switch</a>
+                </div>
+            </li>
+            <li class="project_item year_12">
+                <div class="project_year">
+                    <h2>2012</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2012.igem.org/Team:Michigan">Utilizing FimE and HBif Recombinases to Tightly Control a Bi-directional and Inheritable Switch</a>
+                </div>
+            </li>
+            <li class="project_item year_11">
+                <div class="project_year">
+                    <h2>2011</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2011.igem.org/Team:Michigan">DNA Directed Cell Immobilization using Outer Membrane Protetin Containing Zinc Finger Domain</a>
+                </div>
+            </li>
+            <li class="project_item year_10">
+                <div class="project_year">
+                    <h2>2010</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2010.igem.org/Team:Michigan">Algae Bioflocculation for Biofuel Production and Bioremediation of Oil Sands Tailings Water</a>
+                </div>
+            </li>
+            <li class="project_item year_09">
+                <div class="project_year">
+                    <h2>2009</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2009.igem.org/Team:Michigan">The Toluene Terminator</a>
+                </div>
+            </li>
+            <li class="project_item year_08">
+                <div class="project_year">
+                    <h2>2008</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2008.igem.org/Team:Michigan">Beauty...and the CLOCK</a>
+                </div>
+            </li>
+            <li class="project_item year_07">
+                <div class="project_year">
+                    <h2>2007</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2007.igem.org/Michigan">Divide-By-Two Circuit and BioBrick Landing Pad</a>
+                </div>
+            </li>
+            <li class="project_item year_06">
+                <div class="project_year">
+                    <h2>2006</h2>
+                </div>
+                <div class="prev_project_info">
+                    <a class="underline_link" href="https://2006.igem.org/wiki/index.php/University_of_Michigan_2006">Plasmene</a>
+                </div>
+            </li>
         </ul>
     </main>
     <!-- Footer -->
