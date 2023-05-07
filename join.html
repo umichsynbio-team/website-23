@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/1e15bdbff6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/html5reset.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Join the Michigan Synthetic Biology Team</title>
+    <title>Join MSBT</title>
 </head>
 <body>
     <a class="skip" href="#joinMain">Skip to Main Content</a>
@@ -31,18 +31,18 @@
                 <li class="nav_item dropdown" id="about">
                     <a class="underline_nav" href="about.html">About</a>
                 </li>
-                <li class="nav_item dropdown" id="members" onclick="membersDrop()">
-                    <a class="underline_nav" href="#">Members<i class="fa-solid fa-angle-down"></i></a>
-                    <div class="dropdown_members dropdown_content">
+                <li class="nav_item dropdown" id="members">
+                    <a class="underline_nav" onclick="membersDrop()" href="#">Members<i class="fa-solid fa-angle-down"></i></a>
+                    <div id="memberDrop" class="dropdown_members dropdown_content">
                         <ul class="dropdown_links">
                             <li class="dropdown_item"><a class="underline_nav" href="members.html">Current Members</a></li>
                             <li class="dropdown_item"><a class="underline_nav" href="join.html">Join MSBT</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item dropdown" id="projects" onclick="projectsDrop()">
-                    <a class="underline_nav" href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
-                    <div class="dropdown_projects dropdown_content">
+                <li class="nav_item dropdown" id="projects">
+                    <a class="underline_nav" onclick="projectsDrop()" href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
+                    <div id="projectDrop" class="dropdown_projects dropdown_content">
                         <ul class="dropdown_links">
                             <li class="dropdown_item"><a class="underline_nav" href="current-project.html">Current Project</a></li>
                             <li class="dropdown_item"><a class="underline_nav" href="previous-projects.html">Previous Projects</a></li>

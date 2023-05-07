@@ -31,18 +31,18 @@
                 <li class="nav_item dropdown" id="about">
                     <a class="underline_nav" href="about.html">About</a>
                 </li>
-                <li class="nav_item dropdown" id="members" onclick="membersDrop()">
-                    <a class="underline_nav" href="#">Members<i class="fa-solid fa-angle-down"></i></a>
-                    <div class="dropdown_members dropdown_content">
+                <li class="nav_item dropdown" id="members">
+                    <a class="underline_nav" onclick="membersDrop()" href="#">Members<i class="fa-solid fa-angle-down"></i></a>
+                    <div id="memberDrop" class="dropdown_members dropdown_content">
                         <ul class="dropdown_links">
                             <li class="dropdown_item"><a class="underline_nav" href="members.html">Current Members</a></li>
                             <li class="dropdown_item"><a class="underline_nav" href="join.html">Join MSBT</a></li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav_item dropdown" id="projects" onclick="projectsDrop()">
-                    <a class="underline_nav" href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
-                    <div class="dropdown_projects dropdown_content">
+                <li class="nav_item dropdown" id="projects">
+                    <a class="underline_nav" onclick="projectsDrop()" href="#">Projects<i class="fa-solid fa-angle-down"></i></a>
+                    <div id="projectDrop" class="dropdown_projects dropdown_content">
                         <ul class="dropdown_links">
                             <li class="dropdown_item"><a class="underline_nav" href="current-project.html">Current Project</a></li>
                             <li class="dropdown_item"><a class="underline_nav" href="previous-projects.html">Previous Projects</a></li>
@@ -55,13 +55,23 @@
     </header>
     <main class="" id="aboutMain">
         <!-- We are animation -->
-        <h1>We are <span class="accent">scientists</span></h1>
+        <p class="rotating_text">
+            We are...
+            <span class="rotating_text_adjective">Biologists</span>
+            <span class="rotating_text_adjective">Chemists</span>
+            <span class="rotating_text_adjective">Scientists</span>
+            <span class="rotating_text_adjective">Engineers</span>
+            <span class="rotating_text_adjective">MSBT!</span>
+        </p>
 
         <div class="about_intro about_intro_grid">
             <img class="about_one" src="/images/about/comp_modeling_team.jpg" alt="">
             <img class="about_two" src="/images/about/emily_sophia_vertical.jpg" alt="">
             <img class="about_three" src="/images/about/kimi_kareem.jpg" alt="">
-            <p class="about_four">The Michigan Synthetic Biology Team provides students the opportunity to gain hands on experience in conducting scientific research, running a laboratory, engineering novel biological systems, fundraising, public outreach, leadership, and working as part of a multidisciplinary team. Every year, the team competes in the International Genetically Engineered Machine (iGEM) jamboree competition in Paris.</p>
+            <div class="about_four">
+                <h1>Who We Are</h1>
+                <p>The Michigan Synthetic Biology Team provides students the opportunity to gain hands on experience in conducting scientific research, running a laboratory, engineering novel biological systems, fundraising, public outreach, leadership, and working as part of a multidisciplinary team. Every year, the team competes in the International Genetically Engineered Machine (iGEM) jamboree competition in Paris.</p>
+            </div>
         </div>
         
         <!-- Common Questions -->
@@ -74,7 +84,7 @@
         <!-- Question 02-->
         <div class="question">
             <h2>What is iGem?</h2>
-            <p>iGEM is an international undergraduate synthetic biology competition. In 2015, iGEM consisted of 259 teams and 2700 participants from all over the world. Every year, teams research, design, construct, and test a novel biological system. Students have at their disposal bits of DNA from the iGEM Registry of Standard Biological parts to help aid them in building their biological “machine”. In addition, students are encouraged to <span class="bold accent_blue">build their own parts</span> and <span class="bold accent_blue">develop new techniques</span> to make life easier to engineer. Teams also help to increase awareness for synthetic biology through <span class="bold accent_green">public outreach</span> and <span class="bold accent_green">analyze safety concerns</span> as a part of the project design process. Projects are wide ranging and are divided into the following categories: Environment, Food and Nutrition, Energy, Foundational Advance, Health and Medicine, Information Processing, Manufacturing, Software Tools, and New Applications. Visit the <a href="https://igem.org/">iGem website</a> for more information.</p>
+            <p>iGEM is an international undergraduate synthetic biology competition. In 2015, iGEM consisted of 259 teams and 2700 participants from all over the world. Every year, teams research, design, construct, and test a novel biological system. Students have at their disposal bits of DNA from the iGEM Registry of Standard Biological parts to help aid them in building their biological “machine”. In addition, students are encouraged to <span class="bold accent_blue">build their own parts</span> and <span class="bold accent_blue">develop new techniques</span> to make life easier to engineer. Teams also help to increase awareness for synthetic biology through <span class="bold accent_green">public outreach</span> and <span class="bold accent_green">analyze safety concerns</span> as a part of the project design process. Projects are wide ranging and are divided into the following categories: Environment, Food and Nutrition, Energy, Foundational Advance, Health and Medicine, Information Processing, Manufacturing, Software Tools, and New Applications. Visit the <a class="igem" href="https://igem.org/">iGem website</a> for more information.</p>
         </div>
 
         <!-- Question 03 -->
@@ -108,7 +118,7 @@
             <h3>Point-of-Care rs773902 Genetic Testing to Inform Antiplatelet Pharmacotherapy</h3>
             <p>PAR4 is a platelet receptor that causes blood clotting when activated. A prevalent point mutation in the gene for this receptor makes commonly prescribed antiplatelet therapies less effective; however, alternative, unaffected options are available. We will develop an accessible test for this mutation that can be performed in a physician's office using isothermal DNA amplification and a fluorescent marker.</p>
             <button>
-                <a class="project_button" href="current-project.html">More Details</a>
+                <a class="project_button" href="current-project.html">2023 Project Details~</a>
             </button>
         </div>
         

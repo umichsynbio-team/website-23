@@ -195,26 +195,119 @@ div.intro_blurb {
 }
 
 /* About Styling */
+/* Rotating 'We Are...' Text Animation */
+.rotating_text {
+    margin-top: 50px;
+    font-size: 150%;
+    text-align: center;
+}
+
+.rotating_text_adjective {
+    font-size: 125%;
+    font-weight: bolder;
+    color:green;
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* Separate words from 'We Are' */
+    margin-top: 50px;
+    /* Using opacity to hide adjectives until animation runs */
+    opacity: 0;
+}
+
+/* Animate using CSS keyframes that toggle the opacity property */
+@keyframes rotate {
+    0% {
+        opacity: 0;
+        /* Rotating effect */
+        /* Push down on y-axis 50 pixels */
+        transform: translate3d(0, 50px, 0);
+    }
+
+    20%, 80% {
+        opacity: 2;
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(0, -25px, 0);
+    }
+} /* rotate keyframes */
+
+/* Keep last adjective on screen after animation */
+@keyframes rotate-last {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+} /* rotate-last keyframes */
+
+/* Add animation to each adjective so run one after another,
+stagger animation-delay property */
+.rotating_text_adjective:nth-of-type(1) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 0.5s;
+}
+
+.rotating_text_adjective:nth-of-type(2) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 1.75s;
+}
+
+.rotating_text_adjective:nth-of-type(3) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 3s;
+}
+
+.rotating_text_adjective:nth-of-type(4) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 4.25s;
+}
+
+.rotating_text_adjective:nth-of-type(5) {
+    animation-name: rotate-last;
+    animation-duration: 1.5s;
+    animation-delay: 5.50s;
+    animation-fill-mode: forwards;
+}
+
 .about_intro_grid {
-    margin: 0 50px;
+    margin: 100px 50px 0 50px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-img.about_one, p.about_four {
+img.about_one, div.about_four {
     /* Top horizontal image and bottom text span both columns */
     grid-column: 1 / span 2;
 }
 
-p.about_four {
+div.about_four {
     display: block;
     padding: 20px;
     /* Separate from question below */
     margin-bottom: 40px;
     text-align: left;
     background-color:#1D334A;
+}
+
+.about_four p, .about_four h1 {
     color: white;
+}
+
+.about_four h1 {
+    font-size: 150%;
 }
 
 .question {
@@ -243,6 +336,10 @@ p.about_four {
 .question h2 {
     /* Separate question and text */
     padding-bottom: 10px;
+}
+
+a.igem:hover, a.igem:focus {
+    color: green;
 }
 
 /* Join MSBT Button */
@@ -605,6 +702,15 @@ li.project_item a {
     padding-top: 8px;
 }
 
+.donate_intro a.proj_link {
+    text-decoration: none;
+}
+
+.donate_intro a.proj_link:hover,
+.donate_intro a.proj_link:focus {
+    text-decoration: underline;
+}
+
 .giving_hand {
     padding: 10px;
     margin: 50px 0;
@@ -702,8 +808,13 @@ footer a:hover {
 
     /* About Styling */
     .about_intro_grid {
-        margin: 0 100px;
+        margin: 100px 100px 0 100px;
     }
+
+    .about_four h1 {
+        font-size: 200%;
+    }
+
     .question:nth-child(even) {
         /* Switch direction of middle question paragraph */
         text-align: right;
@@ -850,11 +961,12 @@ footer a:hover {
 
     .dono_forms {
         grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
     }
 
     .friend_form, .company_form {
         /* Right-align */
-        margin: 10px 10px 0 0;
+        margin: 25dpx 10px 0 0;
     }
 } /* Tablet view 640px */
 
@@ -966,8 +1078,12 @@ footer a:hover {
     }
 
     /* About Styling */
+    .rotating_text {
+        margin-top: 100px;
+        font-size: 175%;
+    }
     .about_intro_grid {
-        margin: 0 150px 50px 150px;
+        margin: 150px 150px 50px 150px;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
@@ -986,7 +1102,7 @@ footer a:hover {
         align-self: start;
     }
 
-    p.about_four {
+    div.about_four {
         grid-column: 3 / -1;
         grid-row: 1 / span 2;
         align-self: center;
