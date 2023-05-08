@@ -393,6 +393,10 @@ a.igem:hover, a.igem:focus {
     margin: 50px;
 }
 
+.current_project h3 {
+    color:#1D334A;
+}
+
 /* Separation line */
 .current_project p::before {
     display: block;
@@ -503,11 +507,11 @@ ul.member_socials li {
 
 /* Join MSBT Styling */
 .join_intro {
-    background-image: url("/images/join/lab_work.jpg");
+    background-image: url("../images/join/lab_work.jpg");
     background-color: #727272;
     background-size: cover;
     background-blend-mode: multiply;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     text-align: center;
 }
 
@@ -600,19 +604,102 @@ ul.major_list {
     font-weight: normal;
 }
 
+.curr_proj_intro {
+    margin: 50px;
+    overflow-wrap: break-word;
+}
+
+.curr_proj_intro h3 {
+    font-size: 115%;
+    padding-top: 5px;
+}
+
+.abstract, .challenges_list {
+    margin: 0 75px 50px 75px;
+    background-color: #35682D;
+    border-radius: 25px;
+    padding: 25px 25px;
+}
+
+.challenges h2 {
+    color: #35682D;
+    text-align: center;
+}
+
+.abstract h2, .abstract p,
+.challenges ul {
+    color: white;
+}
+
+.background_info h2 {
+    padding-bottom: 10px;
+}
+
+.background_info p {
+    padding-bottom: 50px;
+}
+
 .our_plan {
-    background-image: url("/images/current/plan_background.jpg");
+    background-image: url("../images/current/plan_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #727272;
     background-blend-mode: multiply;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     text-align: center;
     color: white;
 }
 
-#currProjMain.our_plan h2 {
+.our_plan h2 {
     color: white;
+}
+
+.our_plan h2 {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.our_plan h2::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+    width: 50px;
+    background-color: white;
+}
+
+ul.plan {
+    padding: 0 50px 75px 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+    text-align: left;
+}
+
+
+h3.stay_tuned {
+    margin: 50px 75px;
+}
+
+.challenges h2 {
+    margin: 50px 10px;
+}
+
+ul.challenges_list {
+    list-style: square;
+}
+
+li.challenge {
+    margin-bottom: 25px;
+}
+
+.background_info {
+    margin: 25px 50px 0 50px;
+}
+
+h3.stay_tuned {
+    text-align: center;
+    font-size: 150%;
 }
 
 /* Previous Projects Styling */
@@ -745,7 +832,7 @@ li.project_item a {
     background-color: #1D334A;
     /* Center button */
     display: block;
-    margin: 0 auto;
+    margin: 25px auto 0 auto;
     padding: 10px;
 }
 
@@ -828,8 +915,12 @@ footer a:hover {
         margin: 100px;
     }
 
-    .awards, .awards_flex i {
-        padding: 50px 25px;
+    .awards {
+        padding: 50px 25px 50px 75px;
+    }
+    
+    .awards_flex i {
+        padding: 50px 75px 50px 25px;
     }
 
     .awards_flex i {
@@ -933,7 +1024,24 @@ footer a:hover {
         text-align: left;
     }
 
-    /* Previous Projects */
+    /* Current Projects Styling */
+    /* Increase margins */
+    .curr_proj_intro {
+        margin: 50px 100px;
+    }
+
+    .background_info {
+        margin: 25px 100px 0 100px;
+    }
+
+    ul.plan{
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: center;
+        row-gap: 0;
+        column-gap: 25px;
+    }
+
+    /* Previous Projects Styling */
     .prev_projects_intro {
         /* Increase side margins */
         margin: 50px 100px 25px 100px;
@@ -966,7 +1074,7 @@ footer a:hover {
 
     .friend_form, .company_form {
         /* Right-align */
-        margin: 25dpx 10px 0 0;
+        margin: 25px 10px 0 0;
     }
 } /* Tablet view 640px */
 
@@ -1150,7 +1258,31 @@ footer a:hover {
         padding: 0 75px 0 50px;
     }
 
-    /* Previous Projects */
+    /* Current Projects  Styling */
+    /* Increase margins */
+    .curr_proj_intro {
+        width: 50%;
+    }
+
+    .abstract {
+        width: 75%;
+        margin: 0 auto 50px auto;
+    }
+
+    .background_info {
+        margin: 25px 100px 0 100px;
+    }
+
+    /* Increase padding to show background image */
+    .our_plan h2, .challenges h2 {
+        padding: 150px 0 50px 0;
+    }
+
+    ul.plan, ul.challenges_list {
+        padding-bottom: 150px;
+    }
+
+    /* Previous Projects Styling */
     .projects_list {
         /* Projects in two columns */
         grid-template-columns: 1fr 1fr;
