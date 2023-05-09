@@ -817,6 +817,7 @@ li.project_item a {
 }
 
 .donation_use_list {
+    color: #1D334A;
     padding: 10px 25px 10px 100px;
     list-style: circle;
 }
