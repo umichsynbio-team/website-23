@@ -342,7 +342,7 @@ a.igem:hover, a.igem:focus {
     color: green;
 }
 
-a.igem.light,
+a.igem.light, a.igem.light:visited
 a.igem.light:hover, a.igem.light:focus {
     color: white;
 }
