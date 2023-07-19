@@ -48,7 +48,7 @@ h2 {
     font-weight: bold;
 }
 
-button a {
+a.btn {
     color: white;
 }
 
@@ -355,26 +355,39 @@ a.igem.light:hover, a.igem.light:focus {
 }
 
 /* Join MSBT Button */
-.question button,
-.current_project button {
-    display: block;
+a.join_button,
+a.project_button {
+    display: inline-block;
     background-color: #1D334A;
-    padding: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
     margin: 40px auto;
+    transition: color .25s;
 }
 
-.question a.join_button,
-.question a.join_button:visited,
-.current_project a.project_button,
-.current_project a.project_button:visited {
+a.join_button,
+a.join_button:visited,
+a.project_button,
+a.project_button:visited {
     color: white;
     text-decoration: none;
-    font-size: 150%;
+    font-size: 125%;
 }
 
-.question a.join_button:hover,
-.current_project a.project_button:hover {
-    text-decoration: underline;
+a.join_button::after, a.project_button::after {
+    font: var(--fa-font-solid);
+    content: '\f0da';
+    position: relative;
+    left: 5px;
+    bottom: -1px;
+    transition: left .25s;
+}
+
+a.join_button:hover::after,
+a.project_button:hover::after,
+a.join_button:focus::after,
+a.project_button:focus::after {
+    left: 10px;
 }
 
 .awards_flex {
