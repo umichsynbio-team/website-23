@@ -358,9 +358,8 @@ a.igem_join:hover, a.igem_join:focus {
     font-weight: bolder;
 }
 
-/* Join MSBT Button */
-a.join_button,
-a.project_button {
+/* Button Styling */
+a.btn {
     display: inline-block;
     font-weight: 400;
     background-color: #1D334A;
@@ -370,16 +369,13 @@ a.project_button {
     transition: color .25s;
 }
 
-a.join_button,
-a.join_button:visited,
-a.project_button,
-a.project_button:visited {
+a.btn,
+a.btn:visited {
     color: white;
     text-decoration: none;
-    font-size: 125%;
 }
 
-a.join_button::after, a.project_button::after {
+a.btn::after {
     font: var(--fa-font-solid);
     content: '\f101';
     font-size: 90%;
@@ -389,10 +385,8 @@ a.join_button::after, a.project_button::after {
     transition: left .25s;
 }
 
-a.join_button:hover::after,
-a.project_button:hover::after,
-a.join_button:focus::after,
-a.project_button:focus::after {
+a.btn:hover::after,
+a.btn:focus::after {
     left: 10px;
 }
 
@@ -879,21 +873,9 @@ li.project_item a {
 }
 
 /* Donation Form Buttons */
-.friend_form, .company_form {
-    background-color: #1D334A;
-    /* Center button */
-    display: block;
-    margin: 25px auto 0 auto;
-    padding: 10px;
-}
-
-.friend_form a, .company_form a {
-    text-decoration: none;
-    font-size: 125%;
-}
-
-.friend_form a:hover, .company_form a:hover {
-    text-decoration: underline;
+a.friend_form, a.company_form {
+    font-size: 100%;
+    padding: 8px 20px;
 }
 
 .company_gifts {
@@ -958,6 +940,11 @@ footer a:hover, footer a:focus {
     .question:nth-child(even) {
         /* Switch direction of middle question paragraph */
         text-align: right;
+    }
+
+    a.btn.join_button, a.btn.join_button:visited,
+    a.btn.project_button, a.btn.project_button:visited {
+        font-size: 115%;
     }
 
     .awards_flex {
@@ -1359,6 +1346,10 @@ footer a:hover, footer a:focus {
     }
 
     .donation_use, .dono_forms {
-        margin: 25px 100px;
+        margin: 50px 100px;
+    }
+
+    .dono_forms {
+        margin-top: 75px;
     }
 } /* Desktop Styling */
