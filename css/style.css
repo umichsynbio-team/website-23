@@ -349,15 +349,20 @@ a.igem:hover, a.igem:focus {
     color: green;
 }
 
-a.igem.light, a.igem.light:visited
-a.igem.light:hover, a.igem.light:focus {
+a.igem_join {
     color: white;
+    text-decoration: underline;
+}
+
+a.igem_join:hover, a.igem_join:focus {
+    font-weight: bolder;
 }
 
 /* Join MSBT Button */
 a.join_button,
 a.project_button {
     display: inline-block;
+    font-weight: 400;
     background-color: #1D334A;
     padding: 15px 20px;
     border-radius: 5px;
@@ -376,7 +381,8 @@ a.project_button:visited {
 
 a.join_button::after, a.project_button::after {
     font: var(--fa-font-solid);
-    content: '\f0da';
+    content: '\f101';
+    font-size: 90%;
     position: relative;
     left: 5px;
     bottom: -1px;
