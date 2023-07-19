@@ -56,6 +56,13 @@ a, p, h1, h2, header, footer {
     color: #1D334A;
 }
 
+footer h2 {
+    /* Remove h2 styling for footer */
+    color: white;
+    font-size: 100%;
+    font-weight: 400;
+}
+
 /* Header */
 header {
     background-color: #1D334A;
@@ -862,9 +869,8 @@ footer {
     text-align: center;
 }
 
-footer p {
+footer h2 {
     padding: 5px 20px 25px 20px;
-    color: white;
 }
 
 ul.social_media {
