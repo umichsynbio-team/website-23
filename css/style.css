@@ -52,6 +52,38 @@ a.btn {
     color: white;
 }
 
+/* Button Styling */
+a.btn {
+    display: inline-block;
+    font-weight: 400;
+    background-color: #1D334A;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin: 40px auto;
+    transition: color .25s;
+}
+
+a.btn,
+a.btn:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a.btn::after, .awards a::after {
+    font: var(--fa-font-solid);
+    content: '\f101';
+    font-size: 90%;
+    position: relative;
+    left: 5px;
+    bottom: -1px;
+    transition: left .25s;
+}
+
+a.btn:hover::after, a.btn:focus::after,
+.awards a:hover::after, .awards a:focus::after {
+    left: 10px;
+}
+
 a, p, h1, h2, header, footer {
     color: #1D334A;
 }
@@ -356,38 +388,6 @@ a.igem_join {
 
 a.igem_join:hover, a.igem_join:focus {
     font-weight: bolder;
-}
-
-/* Button Styling */
-a.btn {
-    display: inline-block;
-    font-weight: 400;
-    background-color: #1D334A;
-    padding: 15px 20px;
-    border-radius: 5px;
-    margin: 40px auto;
-    transition: color .25s;
-}
-
-a.btn,
-a.btn:visited {
-    color: white;
-    text-decoration: none;
-}
-
-a.btn::after {
-    font: var(--fa-font-solid);
-    content: '\f101';
-    font-size: 90%;
-    position: relative;
-    left: 5px;
-    bottom: -1px;
-    transition: left .25s;
-}
-
-a.btn:hover::after,
-a.btn:focus::after {
-    left: 10px;
 }
 
 .awards_flex {
@@ -965,6 +965,20 @@ footer a:hover, footer a:focus {
 
     .awards_flex i {
         font-size: 1000%;
+    }
+
+    .awards a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .awards a:hover, .awards a:focus {
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .awards a::after {
+        bottom: 1px;
     }
 
     .current_project {
