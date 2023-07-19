@@ -420,7 +420,7 @@ a.igem.light:hover, a.igem.light:focus {
     box-sizing: border-box;
 }
 
-/* Members Styling */
+/* Current Members Styling */
 .members_intro h1 {
     text-align: center;
     margin: 0 auto;
@@ -512,9 +512,28 @@ ul.member_socials li {
     padding: 10px;
 }
 
+.mem_social a.social_link,
+.eboard_social a.social_link {
+    color: white;
+    font-size: 125%;
+    transition: font-weight 1.5s;
+    transition: color .5s;
+}
+
+.eboard_social a.social_link {
+    color: #1D334A;
+}
+
 .mem_social a:hover,
-.eboard_social a:hover {
-    opacity: 75%;
+.mem_social a:focus {
+    font-size: 140%;
+    color: gold;
+}
+
+.eboard_social a:hover,
+.eboard_social a:focus {
+    font-size: 140%;
+    color: darkgoldenrod;
 }
 
 /* Join MSBT Styling */
@@ -887,10 +906,13 @@ li.social_item {
 footer a.social_link {
     color: white;
     font-size: 125%;
+    transition: font-size 1.5s;
+    transition: color .5s;
 }
 
-footer a:hover {
-    opacity: 75%;
+footer a:hover, footer a:focus {
+    font-size: 140%;
+    color: gold;
 }
 
 /* Tablet View Breakpoint */
