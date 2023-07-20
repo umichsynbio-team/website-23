@@ -63,7 +63,7 @@ a.btn {
     transition: color .25s;
 }
 
-a.btn,
+a.btn, a.btn:hover, a.btn:focus
 a.btn:visited {
     color: white;
     text-decoration: none;
